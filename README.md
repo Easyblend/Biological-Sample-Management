@@ -30,7 +30,7 @@ The project includes a React + TypeScript frontend built with Vite and a Python 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/sporebio.git
+git clone https://github.com/Easyblend/Biological-Sample-Management.git
 cd sporebio
 ```
 
@@ -56,7 +56,7 @@ docker-compose up --build
 | Service            | Description                   | Port(s) |
 |--------------------|-------------------------------|---------|
 | `frontend`         | React + Vite frontend          | 5173    |
-| `fastapi_app`      | FastAPI backend                | 8000    |
+| `backend`      | FastAPI backend                | 8000    |
 
 
 > **Note:** Backend services run internally on port 8000. The frontend communicates with the backend via the Docker network.

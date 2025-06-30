@@ -32,7 +32,7 @@ Stores comments related to samples or other entities.
 | Service        | Description             | Port  |
 |----------------|-------------------------|-------|
 | `frontend`     | React + Vite frontend   | 5173  |
-| `fastapi_app`  | FastAPI backend         | 8000  |
+| `backend`      | backend         | 8000  |
 
 > **Note:** Ensure ports **5173** and **8000** are available before running the stack.
 
