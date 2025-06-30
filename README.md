@@ -31,7 +31,7 @@ The project includes a React + TypeScript frontend built with Vite and a Python 
 
 ```bash
 git clone https://github.com/Easyblend/Biological-Sample-Management.git
-cd sporebio
+cd ./Biological-Sample-Management
 ```
 
 
