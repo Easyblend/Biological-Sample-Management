@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 from sqlmodel import Session
 from typing import List
 from ..database import engine
@@ -16,8 +16,12 @@ def create(comment: CommentBase, session: Session = Depends(get_session)):
     return crud_comment.create_comment(comment, session)
 
 @router.get("/", response_model=List[Comment])
-def read_all(session: Session = Depends(get_session)):
-    return crud_comment.get_comments(session)
+def read_all(
+    skip: int = Query(0, ge=0),
+    limit: int = Query(10, ge=1, le=100),
+    session: Session = Depends(get_session)
+):
+    return crud_comment.get_comments(session, skip=skip, limit=limit)
 
 @router.get("/{comment_id}", response_model=Comment)
 def read_one(comment_id: int, session: Session = Depends(get_session)):

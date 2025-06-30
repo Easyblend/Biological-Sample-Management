@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 from sqlmodel import Session, select
-from typing import List
+from typing import List, Optional
 from ..models import Comment, CommentBase, BioSample
 
 def create_comment(comment: CommentBase, session: Session) -> Comment:
@@ -13,8 +13,10 @@ def create_comment(comment: CommentBase, session: Session) -> Comment:
     session.refresh(db_comment)
     return db_comment
 
-def get_comments(session: Session) -> List[Comment]:
-    return session.exec(select(Comment)).all()
+def get_comments(session: Session, skip: int = 0, limit: int = 10) -> List[Comment]:
+    return session.exec(
+        select(Comment).offset(skip).limit(limit)
+    ).all()
 
 def get_comment(comment_id: int, session: Session) -> Comment:
     comment = session.get(Comment, comment_id)

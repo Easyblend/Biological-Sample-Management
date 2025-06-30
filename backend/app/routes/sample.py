@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlmodel import Session
 from typing import List
 from ..database import engine
@@ -16,9 +16,12 @@ def create(sample: BioSampleBase, session: Session = Depends(get_session)):
     return crud_sample.create_sample(sample, session)
 
 @router.get("/", response_model=List[BioSample])
-def read_all(session: Session = Depends(get_session)):
-    return crud_sample.get_samples(session)
-
+def read_all(
+    skip: int = Query(0, ge=0),
+    limit: int = Query(10, ge=1),
+    session: Session = Depends(get_session)
+):
+    return crud_sample.get_samples(session, skip=skip, limit=limit)
 
 @router.get("/{sample_id}", response_model=BioSampleRead)
 def read_one(sample_id: int, session: Session = Depends(get_session)):

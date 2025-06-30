@@ -11,8 +11,9 @@ def create_sample(sample: BioSampleBase, session: Session) -> BioSample:
     session.refresh(db_sample)
     return db_sample
 
-def get_samples(session: Session) -> List[BioSample]:
-    return session.exec(select(BioSample)).all()
+def get_samples(session: Session, skip: int = 0, limit: int = 10) -> List[BioSample]:
+    statement = select(BioSample).offset(skip).limit(limit)
+    return session.exec(statement).all()
 
 def get_sample(sample_id: int, session: Session):
     statement = select(BioSample).where(BioSample.id == sample_id).options(
