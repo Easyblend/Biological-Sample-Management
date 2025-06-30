@@ -1,7 +1,7 @@
 # SporeBio - Biological Sample Management App
 
 SporeBio is a full-stack web application designed to manage biological samples efficiently.  
-The project includes a React + TypeScript frontend built with Vite and a Python FastAPI backend with SQLAlchemy for database interactions.  
+The project includes a React + TypeScript frontend built with Vite and a Python FastAPI backend with SQLModel for database interactions.  
 
 ---
 
