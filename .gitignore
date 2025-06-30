@@ -1,0 +1,49 @@
+# Node modules
+**/node_modules/
+
+# Build output
+frontend/dist/
+frontend/.vite/
+*.log
+
+# dotenv files
+*.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.sqlite
+*.migrations/
+instance/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+ENV/
+backend/.mypy_cache/
+backend/.pytest_cache/
+backend/.venv/
+
+# OS/System
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+
+# Docker
+**/__pycache__/
+*.pid
+
+
+# Log files
+*.log
