@@ -16,7 +16,7 @@ def get_samples(session: Session) -> List[BioSample]:
 
 def get_sample(sample_id: int, session: Session):
     statement = select(BioSample).where(BioSample.id == sample_id).options(
-        selectinload(BioSample.comments)  # 👈 This is key!
+        selectinload(BioSample.comments)
     )
     result = session.exec(statement).one_or_none()
     return result

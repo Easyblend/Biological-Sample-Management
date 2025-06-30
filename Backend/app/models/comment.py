@@ -5,7 +5,7 @@ from sqlalchemy import ForeignKey
 
 class CommentBase(SQLModel):
     comment_text: str
-    sample_id: int = Field(foreign_key="biosample.id")  # Add foreign_key here
+    sample_id: int = Field(foreign_key="biosample.id") 
 
 class Comment(CommentBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
