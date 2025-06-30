@@ -21,8 +21,3 @@ services:
     ports:
       - "5173:5173"  # Vite or 3000 for CRA
     command: ["npm", "run", "dev", "--", "--host"]
-
-  sporebio_backend:
-    build:
-      context: ./backend
-    image: sporebio_backend
