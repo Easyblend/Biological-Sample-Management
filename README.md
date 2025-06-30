@@ -9,7 +9,7 @@ The project includes a React + TypeScript frontend built with Vite and a Python 
 
 - React frontend with Vite for fast development and hot reload  
 - FastAPI backend for robust and fast REST API services  
-- SQLAlchemy ORM for database modeling and queries  
+- SQLModel ORM for database modeling and queries  
 - Dockerized services for easy setup and consistent environments  
 - Live reload in development mode for both frontend and backend  
 
